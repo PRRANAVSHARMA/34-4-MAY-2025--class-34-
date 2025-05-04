@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculator</title>
+        <link rel="stylesheet" href="Calculator.css">
+    </head>
+    <body>
+        <div class="calculator">
+            <div class="top-bar">
+                <button onclick="toogledarkmode()">🌙</button>
+                <button onclick="copytext()">📋</button>
+            </div>
+            <input type="text" id="display" readonly>
+
+            <div class="buttons">
+                <button onclick="append('(')">(</button>
+                <button onclick="append(')')">)</button>
+                <button onclick="append('%')">%</button>
+                <button onclick="append('/')">/</button>
+                <button onclick="append('7')">7</button>
+                <button onclick="append('8')">8</button>
+                <button onclick="append('9')">9</button>
+                <button onclick="append('*')">*</button>
+                <button onclick="append('4')">4</button>
+                <button onclick="append('5')">5</button>
+                <button onclick="append('6')">6</button>
+                <button onclick="append('-')">-</button>
+                <button onclick="append('1')">1</button>
+                <button onclick="append('2')">2</button>
+                <button onclick="append('3')">3</button>
+                <button onclick="append('+')">+</button>
+                <button onclick="append('0')">0</button>
+                <button onclick="append('.')">.</button>
+                <button onclick="calculate()" class="equal">=</button>
+                <button onclick="clearDisplay()" class="clear">C</button>
+                <button onclick="backspace()" class="back">⌫</button>
+                <button onclick="append('^')">^</button>
+                <button onclick="append('sqrt(')">√</button>
+                <button onclick="append('log(')">log</button>
+            </div>
+            <div class="history">
+                <div class="history-header">
+                    <h3>History</h3>
+                    <button onclick="clearHistory()" class="clear-history">Clear</button>
+                </div>
+                <ul id="history-list"></ul>
+            </div>
+        </div>
+        <script src="Calculator.js"></script>
+    </body>
+</html>
