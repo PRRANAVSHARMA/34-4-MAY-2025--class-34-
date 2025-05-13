@@ -1,53 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Calculator</title>
-        <link rel="stylesheet" href="Calculator.css">
-    </head>
-    <body>
-        <div class="calculator">
-            <div class="top-bar">
-                <button onclick="toogledarkmode()">🌙</button>
-                <button onclick="copytext()">📋</button>
-            </div>
-            <input type="text" id="display" readonly>
 
-            <div class="buttons">
-                <button onclick="append('(')">(</button>
-                <button onclick="append(')')">)</button>
-                <button onclick="append('%')">%</button>
-                <button onclick="append('/')">/</button>
-                <button onclick="append('7')">7</button>
-                <button onclick="append('8')">8</button>
-                <button onclick="append('9')">9</button>
-                <button onclick="append('*')">*</button>
-                <button onclick="append('4')">4</button>
-                <button onclick="append('5')">5</button>
-                <button onclick="append('6')">6</button>
-                <button onclick="append('-')">-</button>
-                <button onclick="append('1')">1</button>
-                <button onclick="append('2')">2</button>
-                <button onclick="append('3')">3</button>
-                <button onclick="append('+')">+</button>
-                <button onclick="append('0')">0</button>
-                <button onclick="append('.')">.</button>
-                <button onclick="calculate()" class="equal">=</button>
-                <button onclick="clearDisplay()" class="clear">C</button>
-                <button onclick="backspace()" class="back">⌫</button>
-                <button onclick="append('^')">^</button>
-                <button onclick="append('sqrt(')">√</button>
-                <button onclick="append('log(')">log</button>
-            </div>
-            <div class="history">
-                <div class="history-header">
-                    <h3>History</h3>
-                    <button onclick="clearHistory()" class="clear-history">Clear</button>
-                </div>
-                <ul id="history-list"></ul>
-            </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Calculator</title>
+    <link rel="stylesheet" href="Calculator.css">
+    <script src="https://cdn.jsdelivr.net/npm/mathjs@11/lib/browser/math.js"></script>
+</head>
+
+<body>
+    <div class="calculator">
+        <div class="top-bar">
+            <button onclick="toggleDarkMode()" aria-label="Toggle dark mode">🌙</button>
+            <button onclick="copyResult()" aria-label="Copy result">📋</button>
         </div>
-        <script src="Calculator.js"></script>
-    </body>
+
+        <input type="text" id="display" readonly aria-label="Calculator display">
+
+        <div class="buttons">
+            <button onclick="append('(')" aria-label="Left parenthesis">(</button>
+            <button onclick="append(')')" aria-label="Right parenthesis">)</button>
+            <button onclick="append('%')" aria-label="Percent">%</button>
+            <button onclick="append('/')" aria-label="Divide">/</button>
+            <button onclick="append('7')" aria-label="Seven">7</button>
+            <button onclick="append('8')" aria-label="Eight">8</button>
+            <button onclick="append('9')" aria-label="Nine">9</button>
+            <button onclick="append('*')" aria-label="Multiply">*</button>
+            <button onclick="append('4')" aria-label="Four">4</button>
+            <button onclick="append('5')" aria-label="Five">5</button>
+            <button onclick="append('6')" aria-label="Six">6</button>
+            <button onclick="append('-')" aria-label="Subtract">-</button>
+            <button onclick="append('1')" aria-label="One">1</button>
+            <button onclick="append('2')" aria-label="Two">2</button>
+            <button onclick="append('3')" aria-label="Three">3</button>
+            <button onclick="append('+')" aria-label="Add">+</button>
+            <button onclick="append('0')" aria-label="Zero">0</button>
+            <button onclick="append('.')" aria-label="Decimal point">.</button>
+            <button onclick="calculate()" class="equal" aria-label="Equals">=</button>
+            <button onclick="clearDisplay()" class="clear" aria-label="Clear">C</button>
+            <button onclick="backspace()" class="back" aria-label="Backspace">⌫</button>
+            <button onclick="append('^')" aria-label="Power">^</button>
+            <button onclick="append('sqrt(')" aria-label="Square root">√</button>
+            <button onclick="append('log(')" aria-label="Logarithm">log</button>
+        </div>
+
+        <div class="history">
+            <div class="history-header">
+                <h3>History</h3>
+                <button onclick="clearHistory()" class="clear-history" aria-label="Clear history">Clear</button>
+            </div>
+            <ul id="history-list"></ul>
+        </div>
+    </div>
+
+    <!-- Add audio element for click sound -->
+    <audio id="clickSound" src="click.mp3" preload="auto"></audio>
+
+    <script src="script.js"></script>
+</body>
+
 </html>
